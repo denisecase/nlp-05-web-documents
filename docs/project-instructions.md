@@ -1,120 +1,136 @@
-# Project Instructions (Module 5: Web Documents and HTML Data)
+# Project Instructions
 
-## WEDNESDAY: Complete Workflow Phase 1
+## Goal
 
-Follow the instructions in
-[⭐ **Workflow: Apply Example**](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to complete:
+Apply **web document acquisition and information extraction**
+to retrieve HTML content, validate document structure,
+and transform extracted information into structured data.
 
-1. Phase 1. **Start & Run** - copy the project and confirm it runs
+Use an Extract, Validate, Transform, Load (EVTL) pipeline.
 
-## FRIDAY/SUNDAY: Complete Workflow Phases 2-4
+## A. Set Up Machine
 
-Again, follow the instructions above to complete:
+Complete [Workflow A: Set Up Machine](https://denisecase.github.io/pro-analytics-02/workflow-a-set-up-machine/)
+if your machine is not ready.
 
-1. Phase 2. **Change Authorship** - update the project to your name and GitHub account
-2. Phase 3. **Read & Understand** - review the project structure and code
-3. Phase 4. **Make a Technical Modification** - make a change and verify it still runs.
+## B. Explore Example Project
 
-## Phase 4 Suggestions
+Follow [Workflow B: Explore Example Project](https://denisecase.github.io/pro-analytics-02/workflow-b-explore-example-project/).
 
-Make a small technical change that does not break the pipeline.
-Choose any one of these (or a different modification as you like):
+Explore how the example:
 
-- Change the target URL to a different arXiv paper
-  (find a paper you find interesting at https://arxiv.org)
-- Add a new derived column in the Transform stage
-  (e.g., sentence count in the abstract, or first author only)
-- Add extraction of a new field from the page
-  (e.g., the PDF link, or the arXiv category code)
-- Adjust logging messages to provide more detail about the pipeline stages
+- Retrieves an HTML document from arXiv.
+- Preserves the original HTML content.
+- Parses the document using BeautifulSoup.
+- Validates required HTML elements.
+- Extracts document text and metadata.
+- Calculates derived fields.
+- Saves the structured results as a CSV artifact.
 
-Confirm the script still runs successfully after your change.
+Review how HTML tags, attributes, and selectors
+are used to locate the required information.
 
-## Phase 5 Suggestions
+Consider what happens when an expected element is missing.
 
-### Phase 5 Suggestion 1. New arXiv Paper (Directed)
+## C. Start New Project
 
-Apply the same EVTL pipeline to a different arXiv abstract page.
+Follow [Workflow C: Start New Project](https://denisecase.github.io/pro-analytics-02/workflow-c-start-new-project/).
 
-Steps:
+IMPORTANT: New repository name:
+**nlp-05-web-documents-custom**.
 
-- Find an arXiv paper that interests you at https://arxiv.org
-- Copy the abstract page URL (e.g., `https://arxiv.org/abs/XXXX.XXXXX`)
-- Update `PAGE_URL` in your copied `config` file with the new URL
-- Run the pipeline
-- Inspect the extracted fields in the log output
-- Confirm the pipeline runs successfully
+VERIFY: You have completed git add-commit-push to GitHub at least twice.
 
-Then:
+## D. Apply Skills
 
-- Identify the title, authors, and primary subject of your chosen paper
-- Describe one field that required cleaning or special handling
-- Explain how the abstract word count compares to the case example
+Follow [Workflow D: Apply Skills](https://denisecase.github.io/pro-analytics-02/workflow-d-apply-skills/).
 
-### Phase 5 Suggestion 2. New Web Page (Original Selection)
+**Your problem:** Extract and analyze metadata
+from an academic paper of your choice.
 
-Apply this pipeline to a different web page of your choice.
+Select a different paper from
+[arXiv](https://arxiv.org/).
 
-Good options include:
+Keep the original `_case.py` files as working examples.
+Create and modify copies for your custom processing stages.
 
-- Another arXiv listing page (e.g., `https://arxiv.org/list/cs.AI/recent`)
-  to extract multiple papers at once
-- A Wikipedia article to extract the introduction and metadata
-- A Project Gutenberg page to extract text from a literary work
-  (e.g., https://www.gutenberg.org/files/1342/1342-h/1342-h.htm Pride and Prejudice)
+Update the pipeline imports as needed
+so your custom implementation executes.
 
-Steps:
+### Progression 1. Your Project Works Like the Example
 
-- Open the target page in your browser
-- Right-click and select "View Page Source" to inspect the HTML structure
-- Identify the tags and class names that wrap the content you want
-- Update your copied `config` file with the new URL
-- Update your copied `stage02_validate` file to check for the new structure
-- Update your copied `stage03_transform` file to extract the new fields
-- Run the pipeline and confirm success
+Ensure your new custom project runs like the example.
 
-Then:
+Verify that key files have been updated to use **your GitHub account** and
+the **new custom repository name**.
 
-- Describe the HTML structure of your chosen page
-- Identify the tags and attributes you used to extract each field
-- Explain one challenge you encountered and how you resolved it
+### Progression 2. Make a Technical Modification
 
-## Key Skill Focus
+Add one new derived field to the Transform stage.
 
-As you work, focus on:
+For example, calculate the number of sentences
+in the extracted abstract.
 
-- how to fetch HTML from a web page
-- how to inspect unknown HTML structures using View Page Source
-- how to identify tags, classes, and attributes that wrap desired content
-- how to extract clean text using BeautifulSoup
-- how to handle missing elements gracefully with fallback values
-- how data moves through the EVTL pipeline
+Verify that the new field appears
+in the resulting DataFrame and CSV artifact.
 
-Your goal is to reuse the same pipeline pattern on new web data sources.
+Explain how the field is calculated
+and what it measures.
 
-## Optional Enhancements
+### Progression 3. Apply to a New Problem
 
-If time allows, consider:
+Apply the EVTL pipeline
+to your selected arXiv paper.
 
-- extracting additional fields (PDF link, DOI, version history)
-- computing additional derived fields (sentence count, average word length)
-- scraping a listing page to extract multiple records into a multi-row DataFrame
-- comparing two papers side by side in a single DataFrame
+- Update the source URL in your custom configuration.
+- Retrieve and inspect the HTML document.
+- Identify the elements containing the desired information.
+- Verify that the HTML structure meets validation requirements.
+- Extract the title, authors, abstract, and subject information.
+- Apply appropriate cleaning to extracted values.
+- Include your new derived field.
+- Save the structured results as a CSV artifact.
+- Verify that the extracted information is correct.
 
-## Professional Communication
+Explain how the selected HTML elements
+support the extraction process.
 
-Remove instructor-provided content you no longer need in your project.
+Identify one challenge or limitation
+associated with extracting information from HTML.
 
-Make sure the title and narrative reflect your presentation.
-Verify key files:
+The goal is to understand how web documents
+can be converted into structured datasets
+using a reproducible pipeline.
 
-- README.md
-- docs/ (source and hosted on GitHub Pages)
-- src/ (pipeline and stage files)
+## E. Finalize Project
 
-Ensure your project clearly demonstrates:
+Follow [Workflow E: Finalize Project](https://denisecase.github.io/pro-analytics-02/workflow-e-finalize/).
 
-- correct EVTL pipeline execution
-- understanding of HTML structure and BeautifulSoup
-- ability to adapt the pipeline to new web data sources
+Use `docs/index.md` to report:
+
+- Selected document and source URL.
+- Information selected for extraction.
+- HTML structure and validation requirements.
+- Transformation and derived fields.
+- Extracted results and a relevant visual.
+- Interpretation and limitations.
+
+Include a clickable link to your repository and artifacts.
+
+## Success
+
+- [ ] README.md project-specific links use **your GitHub account**.
+- [ ] README.md project-specific links use **your custom repository name**.
+- [ ] docs/index.md project-specific links use **your GitHub account**.
+- [ ] docs/index.md project-specific links use **your custom repository name**.
+- [ ] pyproject.toml `name` has been changed to use **your custom repository name**.
+- [ ] The `src/nlp` folder reflects your authorship and custom work.
+- [ ] The custom EVTL pipeline processes your selected document.
+- [ ] The raw HTML and processed CSV artifacts are available.
+- [ ] All necessary commands are provided and work successfully.
+- [ ] Links to the Professional Python Guide (pro-analytics-02) remain unchanged.
+- [ ] Commit history shows **at least** the git add-commit-push history required in the instructions.
+
+---
+
+[◄ Back to Home](index.md)

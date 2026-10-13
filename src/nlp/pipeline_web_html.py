@@ -1,5 +1,5 @@
-"""
-src/nlp/pipeline_web_html.py - Module 5 Script
+"""src/nlp/pipeline_web_html.py - Module 5 Script.
+
 (NO EDITS REQUIRED IN THIS FILE)
 
 Purpose
@@ -18,8 +18,7 @@ Analytical Questions
 - How can we transform HTML into clean, structured data?
 - How can we load the transformed data into a sink (like a CSV file)?
 
-Notes
-
+Notes:
 - This file should not require modification.
 - This is the main pipeline script that orchestrates the entire EVTL process.
 - It assumes a standard ETL pipeline enhanced with a VALIDATE stage,
@@ -44,7 +43,7 @@ import logging
 
 from datafun_toolkit.logger import get_logger, log_header, log_path
 
-from nlp.config_case import (
+from nlp.config import (
     DATA_PATH,
     HTTP_REQUEST_HEADERS,
     PAGE_URL,
@@ -55,8 +54,8 @@ from nlp.config_case import (
     ROOT_PATH,
 )
 from nlp.stage01_extract import run_extract
-from nlp.stage02_validate_case import run_validate
-from nlp.stage03_transform_case import run_transform
+from nlp.stage02_validate import run_validate
+from nlp.stage03_transform import run_transform
 from nlp.stage04_load import run_load
 
 # ============================================================
@@ -72,6 +71,7 @@ LOG: logging.Logger = get_logger("CI", level="DEBUG")
 
 
 def main() -> None:
+    """Main function."""
     log_header(LOG, "Module 5: EVTL PIPELINE - WEB DOCUMENTS (HTML)")
     LOG.info("START PIPELINE")
 

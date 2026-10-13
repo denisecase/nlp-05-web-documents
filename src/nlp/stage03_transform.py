@@ -1,6 +1,6 @@
-"""
-src/nlp/stage03_transform_case.py
-(EDIT YOUR COPY OF THIS FILE)
+"""src/nlp/stage03_transform.py.
+
+(EDIT YOUR VERSION OF THIS FILE)
 
 Source: validated BeautifulSoup object
 Sink: Pandas DataFrame
@@ -68,12 +68,11 @@ This stage requires careful inspection of the HTML structure and thoughtful hand
 
 Use all your resources, creativity, and problem-solving skills to navigate the complexities of web data extraction and transformation.
 
-Notes
-
-Following our process, do NOT edit this _case file directly,
+Notes:
+Following our process, do NOT edit this  file directly,
 keep it as a working example.
 
-In your custom project, copy this _case.py file and
+In your custom project, copy this .py file and
 append with _yourname.py instead.
 
 Then edit your copied Python file to:

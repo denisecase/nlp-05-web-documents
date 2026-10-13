@@ -1,20 +1,66 @@
 # ============================================================
-# zensical.toml (Zensical configuration file)
+# zensical.toml (ALL-PY-REPOS)
+# ============================================================
+# Updated: 2026-10-11
+#
+# WHAT: A configuration file for building a professional project website.
+#       Zensical converts Markdown documentation into a navigable website.
+#       TOML is a human-readable data format commonly used for configuration.
+#       This file tells Zensical how to organize and present the website.
+#
+# WHEN: Use for projects that need a professional documentation website.
+#       Supports projects with or without a src/ Python application.
+#
+# WHY: Professional work must be communicated, not just completed.
+#      Documentation helps others understand the project's purpose,
+#      data, methods, processes, results, and conclusions.
+#      It makes the work easier to evaluate, reproduce, maintain, and reuse.
+#      A published website makes the work accessible beyond the developer's
+#      computer and provides a professional way to share accomplishments.
+#
+# HOW: Write documentation in Markdown files under docs/.
+#      Zensical builds these files into a website under site/.
+#      GitHub Actions can automatically publish the website to GitHub Pages.
+#      The documentation stays associated with the project repository.
+#
+# CI/CD: Continuous Integration (CI) can verify that documentation builds.
+#        Continuous Deployment (CD) can publish the website automatically.
+#        This file configures Zensical; separate workflows handle CI/CD.
+#
+# SKILLS: Technical writing, project documentation, Markdown, TOML,
+#         Zensical, GitHub Pages, CI/CD, and professional communication.
+#
+# TOOLS: Markdown provides the documentation content.
+#        Zensical generates the website.
+#        GitHub Pages hosts the published website.
+#
+# REQ: pyproject.toml docs dependency group SHOULD include
+#      zensical and mkdocstrings[python].
+# OBS: API documentation is generated only when requested in Markdown.
+#
+# LOCAL TESTING: Build the documentation website to check for errors.
+#
+#   uv run python -m zensical build
+#
+# LOCAL PREVIEW: Start a local web server to see the documentation in a browser.
+#                Zensical automatically refreshes the site as files change.
+#
+#   uv run python -m zensical serve --open
+#
+# OBS: The preview runs at http://localhost:8000.
+#      Press Ctrl+C in the terminal to stop the server.
 # ============================================================
 
-# WHY: Centralizes project documentation configuration.
-# Zensical is a drop-in replacement for MkDocs that provides AI-assisted docstring generation and enhanced documentation features.
-# It is used in this project to streamline documentation and provide better support for docstring generation.
-
 [project]
-site_name = "Web Mining and Applied NLP"
+site_name = "Docs" # CUSTOM: Set the name that appears in the browser tab.
 site_url = "https://denisecase.github.io/nlp-05-web-documents/"
 repo_url = "https://github.com/denisecase/nlp-05-web-documents"
-repo_name = "denisecase/nlp-05-web-documents"
-site_description = "Web Mining and Applied NLP project documentation"
+repo_name = "nlp-05-web-documents"
+site_description = "Project Documentation" # CUSTOM: Set the description.
 docs_dir = "docs" # source directory for documentation markdown files
 site_dir = "site" # output directory for generated site (ignored by Git; not in repo)
 edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
+
 
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
@@ -22,43 +68,53 @@ social = [
     {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/nlp-05-web-documents" },
 ]
 
-# ------------------------------------------------------------
-# Plugins
-# ------------------------------------------------------------
-[project.plugins.search]
-lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
+[project.markdown_extensions]
+admonition = {} # WHY: Allows shaded blocks
+md_in_html = {} # WHY: Allow Markdown inside HTML blocks when the opening tag includes `markdown`, e.g. <details markdown>...</details>
+pymdownx.superfences = {} # WHY: Enables support for fenced code blocks with syntax highlighting and custom options.
+
+# ============================================================
+# === Plugins ===
+# ============================================================
 
 [project.plugins.mkdocstrings.handlers.python]
 paths = ["src"] # WHY: MkDocstrings auto-generates documentation from code; this points it to the source code directory.
 
 [project.plugins.mkdocstrings.handlers.python.options]
-docstring_style = "google" # WHY: Google style docstrings are widely used and supported by many tools, including Zensical's AI-assisted generation.
-show_source = true # WHY: Showing source code in documentation can help users understand implementation details.
-show_root_heading = true
-show_root_toc_entry = true
-show_signature_annotations = true
-separate_signature = true
+docstring_style = "google" # WHY: Google style docstrings are widely used and supported by many tools.
+show_source = true # WHY: Showing source code can help users understand implementation details.
+show_root_heading = true # WHY: Displaying the root heading provides context for the documentation structure.
+show_root_toc_entry = true # WHY: Including the root in the table of contents helps users navigate the documentation.
+show_signature_annotations = true # WHY: Displaying type annotations in function signatures improves clarity and understanding of the code's expected inputs and outputs.
+separate_signature = true # WHY: Separating the signature from the description enhances readability and comprehension of the documentation.
+show_submodules = true # WHY: Including submodules in the documentation provides a complete view of the codebase and its structure.
+
+[project.plugins.search]
+lang = "en" # WHY: Search plugin provides instant search functionality for documentation.
 
 [project.theme]
 # SEE: https://zensical.org/docs/setup/navigation/#instant-navigation-zensicaltoml
 features = [
-    "navigation.tracking", # WHY: Tracking allows for analytics on how users interact with the documentation, which can inform improvements.
-    "navigation.expand", # WHY: Expandable navigation allows users to focus on relevant sections while keeping the overall structure accessible.
-    "navigation.path", # WHY: Path navigation helps users understand their location within the documentation hierarchy.
-    "navigation.prune", # WHY: Pruning simplifies navigation by hiding irrelevant sections based on the current page.
-    "navigation.indexes", # WHY: Indexes provide an overview of the documentation structure and allow for quick access to different sections.
-    "toc.follow", # WHY: Following the table of contents enhances user experience by keeping the navigation in sync with the current page.
-    "toc.integrate", # WHY: Integrating the table of contents into the navigation provides a more cohesive and user-friendly interface.
-    "navigation.top",# WHY: A "Back to top" button improves usability by allowing users to quickly return to the top of the page.
- ]
-
-# ------------------------------------------------------------
-# Navigation
-# ------------------------------------------------------------
-# Folder-based navigation is an optional alternative.
-
-nav = [
-    { "Home" = "index.md" },
-    { "Glossary" = "glossary.md" },
-    { "Project Instructions" = "project-instructions.md" },
+    "navigation.expand", # WHY: Expandable navigation helps users focus on relevant sections.
+    "navigation.indexes", # WHY: Indexes provide an overview of documentation structure.
+    "navigation.path", # WHY: Path navigation helps users understand location.
+    "navigation.prune", # WHY: Pruning simplifies navigation.
+    "navigation.top", # WHY: Add a back-to-top button.
+    "navigation.tracking", # WHY: Track documentation navigation behavior.
+    "toc.follow", # WHY: Keep table of contents in sync with the current page.
+    "toc.integrate", # WHY: Integrate table of contents into navigation.
 ]
+
+# ============================================================
+# === Navigation ===
+# ============================================================
+# Zensical automatically creates the website navigation menu from the
+# folders and Markdown files in docs/.
+# No separate menu configuration is needed.
+#
+# For example:
+#   docs/index.md       - Main project write-up (methods, results, conclusions)
+#   docs/data-card.md   - Google data card describing the dataset
+#   docs/api.md         - API reference generated from Python docstrings
+#
+# Add or organize Markdown files in docs/ to update the website navigation.

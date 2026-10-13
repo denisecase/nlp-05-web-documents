@@ -1,12 +1,11 @@
-"""
-src/nlp/stage04_load.py
+"""src/nlp/stage04_load.py.
+
 (NO EDITS REQUIRED IN THIS FILE IF USING THE SAME PACKAGES)
 
 Source: DataFrame (in this case, a Pandas DataFrame, change if using polars)
 Sink: CSV file
 
-Notes
-
+Notes:
 - This file should not require modification unless you change the DataFrame library.
 """
 

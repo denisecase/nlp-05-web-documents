@@ -1,5 +1,5 @@
-"""
-src/nlp/stage01_extract.py - Stage 01: Extract
+"""src/nlp/stage01_extract.py - Stage 01: Extract.
+
 (NO EDITS REQUIRED IN THIS FILE)
 
 Source: HTML page at configured URL
@@ -11,8 +11,7 @@ and saving it to a file.
 It also returns the extracted data as a Python object
 for use in subsequent stages.
 
-Notes
-
+Notes:
 - This file should not require modification.
 """
 

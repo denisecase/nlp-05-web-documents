@@ -1,6 +1,6 @@
-"""
-src/nlp/config_case.py - Module 5 Configuration
-(COPY AND MODIFY THIS FILE - do not edit the original)
+"""src/nlp/config.py - Module 5 Configuration.
+
+(COPY AND MODIFY YOUR VERSION OF THIS FILE - do not edit the original)
 
 Stores configuration values for the web document EVTL pipeline.
 Source: arXiv abstract page for "Agents of Chaos" (2602.20021)
@@ -14,12 +14,11 @@ Analytical Questions
 - What web page URL should be used as the data source?
 - Where should raw and processed data be stored?
 
-Notes
-
-Following our process, do NOT edit this _case file directly,
+Notes:
+Following our process, do NOT edit this  file directly,
 keep it as a working example.
 
-In your custom project,copy this _case.py file and
+In your custom project,copy this .py file and
 append with _yourname.py instead.
 
 Then edit your copied Python file to change:
@@ -35,7 +34,7 @@ from pathlib import Path
 
 # TODO: In your custom app, change the URL to work with a different page.
 PAGE_URL: str = "https://arxiv.org/abs/2602.20021"
-# arXiv abstract page — stable, scraping-friendly, academically relevant
+# arXiv abstract page - stable, scraping-friendly, academically relevant
 
 # Let them know who we are (and that we're doing educational web mining).
 HTTP_REQUEST_HEADERS: dict = {

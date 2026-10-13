@@ -1,0 +1,69 @@
+# ============================================================
+# .github/dependabot.yml (ALL-REPOS)
+# ============================================================
+# Updated: 2026-10-11
+#
+# WHAT: A configuration file for automated dependency updates.
+#       Dependabot is a GitHub service that checks for newer versions
+#       of software dependencies used by a project.
+#       This YAML file tells Dependabot what to check and how often.
+#
+# WHEN: Use in repositories that contain GitHub Actions workflows.
+#       This standard checks GitHub Actions dependencies only.
+#       Python dependencies are maintained separately using uv.
+#
+# TRIGGER: Dependabot checks for GitHub Actions updates quarterly.
+#          When updates are available, it creates pull requests (PRs)
+#          proposing changes for review.
+#
+# WHY: Professional projects depend on software maintained by others.
+#      Dependencies receive security fixes, compatibility updates,
+#      and reliability improvements over time.
+#      Dependabot helps identify available updates without requiring
+#      developers to check every dependency manually.
+#      Quarterly checks reduce maintenance interruptions while keeping
+#      project automation reasonably current.
+#
+# CI/CD: GitHub Actions workflows automate project checks and deployments.
+#        Dependabot helps maintain the actions used by those workflows.
+#        It proposes updates but does not automatically merge them.
+#
+# SKILLS: GitHub, Dependabot, dependency management, pull requests,
+#         software maintenance, supply-chain security, and CI/CD.
+#
+# TOOLS: Dependabot checks for updates and proposes pull requests.
+#        GitHub Actions runs the project's automated workflows.
+#
+# REQ: Repositories SHOULD track GitHub Actions updates automatically.
+# REQ: Proposed dependency updates SHOULD be reviewed before merging.
+#
+# OBS: GitHub Actions may be pinned to full commit SHAs for security.
+#      Dependabot supports updates to SHA-pinned actions.
+# OBS: Scheduled version updates are separate from security updates.
+#      Security updates may be proposed sooner when enabled.
+# OBS: Python dependencies are updated through the project's uv workflow.
+#
+# SEE: https://docs.github.com/code-security/dependabot
+# ============================================================
+
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+
+    # WHY: "/" tells Dependabot to inspect GitHub Actions workflows for this
+    # repository.
+    directory: "/"
+
+    schedule:
+      # WHY: Weekly checks keep executable CI dependencies reasonably current
+      # without creating daily maintenance noise.
+      interval: "weekly"
+
+    commit-message:
+      # WHY: Use a recognizable dependency prefix for filtering and history.
+      prefix: "(deps)"
+
+    cooldown:
+      default-days: 7
+      # WHY: Match the 7-day cooldown used by uv exclude-newer and prek.

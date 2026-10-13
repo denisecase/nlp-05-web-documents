@@ -25,7 +25,7 @@
 ```shell
 uv self update
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+uv sync --upgrade
 ```
 
 ## pre-commit

@@ -1,6 +1,6 @@
-"""
-src/nlp/stage02_validate_case.py - Validate Stage
-(EDIT YOUR COPY OF THIS FILE)
+"""src/nlp/stage02_validate.py - Validate Stage.
+
+(EDIT YOUR VERSION OF THIS FILE)
 
 Source: Raw HTML string
 Sink:   BeautifulSoup object (in memory)
@@ -16,12 +16,11 @@ Analytical Questions
 - What data types are associated with each field?
 - Does the data meet expectations for transformation?
 
-Notes
-
-Following our process, do NOT edit this _case file directly,
+Notes:
+Following our process, do NOT edit this  file directly,
 keep it as a working example.
 
-In your custom project, copy this _case.py file and
+In your custom project, copy this .py file and
 append with _yourname.py instead.
 
 Then edit your copied Python file to:
