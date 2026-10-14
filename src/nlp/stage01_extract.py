@@ -1,6 +1,6 @@
 """src/nlp/stage01_extract.py - Stage 01: Extract.
 
-(NO EDITS REQUIRED IN THIS FILE)
+NO EDITS REQUIRED IN THIS FILE (if paths have not changed.)
 
 Source: HTML page at configured URL
 Sink:   Raw HTML file at RAW_HTML_PATH

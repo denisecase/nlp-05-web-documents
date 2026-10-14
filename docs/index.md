@@ -98,7 +98,7 @@ provide inputs for subsequent NLP analysis.
 
 - [GitHub Repository](https://github.com/denisecase/nlp-05-web-documents)
 - [Example Pipeline](https://github.com/denisecase/nlp-05-web-documents/blob/main/src/nlp/pipeline_web_html.py)
-- [Example Configuration](https://github.com/denisecase/nlp-05-web-documents/blob/main/src/nlp/config_case.py)
+- [Example Configuration](https://github.com/denisecase/nlp-05-web-documents/blob/main/src/nlp/config.py)
 - [Pipeline Stages](https://github.com/denisecase/nlp-05-web-documents/tree/main/src/nlp)
 
 ## Project Resources

@@ -16,16 +16,9 @@ Analytical Questions
 - What data types are associated with each field?
 - Does the data meet expectations for transformation?
 
-Notes:
-Following our process, do NOT edit this  file directly,
-keep it as a working example.
-
-In your custom project, copy this .py file and
-append with _yourname.py instead.
-
-Then edit your copied Python file to:
-- inspect the JSON structure for your API,
-- validate required keys and types,
+Edit your Python file to:
+- inspect the HTML structure for your API,
+- validate the presence of required HTML elements,
 - confirm the data is usable for your analysis.
 """
 
