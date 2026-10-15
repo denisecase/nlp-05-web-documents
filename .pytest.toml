@@ -14,7 +14,7 @@
 #
 # HOW: Open a terminal in the repository root and run:
 #
-#      uv run pytest
+#      uv run python -m pytest
 #
 # TOOLS: pytest discovers and executes Python tests.
 #        pytest-cov measures how much project code is exercised by tests.

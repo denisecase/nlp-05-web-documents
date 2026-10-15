@@ -1,4 +1,4 @@
-"""src/nlp/config.py - Module 5 Configuration.
+"""src/nlp/config.py - Module Configuration.
 
 (MODIFY YOUR VERSION OF THIS FILE)
 

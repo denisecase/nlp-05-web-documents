@@ -132,7 +132,7 @@ jobs:
       - name: C1) Run pytest
         run: uv run python -m pytest
         # WHY: Confirm all Python tests pass in a clean CI environment.
-        # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
+        # OBS: pytest config lives in .pytest.toml (or pyproject.toml)
         # OBS: Not included in hooks because tests can be slow.
 
       # ============================================================
